@@ -1,0 +1,16 @@
+.drop-area {
+  height: 150px;
+  border: 5px dashed gray;
+  margin: 10px;
+}
+.space {
+  margin: 10px;
+}
+.submit-button {
+  width: 100%;
+  border: none;
+  background-color: #6495ed;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
