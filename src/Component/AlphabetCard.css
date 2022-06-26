@@ -8,6 +8,17 @@
   cursor: move;
   position: relative;
 }
+.mirror-box {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  background-color: #9acd32;
+  border-radius: 5px;
+  padding: 40px;
+  cursor: default;
+  display: block;
+  position: relative;
+}
 
 .delet-button {
   position: absolute;

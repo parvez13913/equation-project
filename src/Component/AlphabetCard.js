@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDrag } from 'react-dnd';
 import './AlphabetCard.css';
 
-const AlphabetCard = ({ alphabet, basket }) => {
+const AlphabetCard = ({ alphabet, basket, setBasket }) => {
     const { name, _id } = alphabet;
     const [{ isDragging }, dragRef] = useDrag({
         type: 'alphabet',
@@ -18,23 +18,29 @@ const AlphabetCard = ({ alphabet, basket }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                const remaining = basket.filter(item => item._id !== id);
+                setBasket(remaining);
             });
     }
 
     return (
         <div ref={dragRef}>
-            <div className='box shadow d-flex align-items-center justify-content-center'>
-                <h6>{name}</h6>
-                <div className='d-flex align-items-end justify-content-end'>
-                    <h6>
-                        {
-                            basket && <button onClick={() => handelDeleteButton(_id)} className='border-0 delet-button fw-bold'>X</button>
-                        }
-                    </h6>
+            {
+                basket ? <div className='mirror-box shadow d-flex align-items-center justify-content-center'>
+                    <h6>{name}</h6>
+                    <div className='d-flex align-items-end justify-content-end'>
+                        <h6>
+                            {
+                                basket && <button onClick={() => handelDeleteButton(_id)} className='border-0 delet-button fw-bold'>X</button>
+                            }
+                        </h6>
+                    </div>
+                    {isDragging && '😱'}
+                </div> : <div className='box shadow d-flex align-items-center justify-content-center'>
+                    <h6>{name}</h6>
+                    {isDragging && '😱'}
                 </div>
-                {isDragging && '😱'}
-            </div>
+            }
         </div>
     );
 };

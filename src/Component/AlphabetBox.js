@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
 import AlphabetCard from './AlphabetCard';
-import './AlphabetBox.css'
-
-const alphabets = [
-    { id: 1, name: 'A' },
-    { id: 2, name: 'B' },
-    { id: 3, name: 'C' },
-    { id: 4, name: 'D' },
-    { id: 5, name: 'E' }
-];
+import './AlphabetBox.css';
 
 const AlphabetBox = () => {
     const [alphabets, setAlphabets] = useState([]);
@@ -43,6 +35,7 @@ const AlphabetBox = () => {
                     key={alphabet._id}
                     alphabet={alphabet}
                     basket={basket}
+                    setBasket={setBasket}
                 />)}
                 {isOver && <div>Drop Here!</div>}
             </div>
