@@ -1,15 +1,10 @@
 import React from 'react';
-import FirstSection from './FirstSection';
-import './HomePage.css';
-import SecondSection from './SecondSection';
-import ThirdSection from './ThirdSection';
+import AlphabetBox from './AlphabetBox';
 
 const HomePage = () => {
     return (
         <div>
-            <FirstSection />
-            <SecondSection />
-            <ThirdSection />
+            <AlphabetBox />
         </div>
     );
 };

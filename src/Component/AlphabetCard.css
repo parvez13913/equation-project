@@ -1,0 +1,20 @@
+.box {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  background-color: #9acd32;
+  border-radius: 5px;
+  padding: 40px;
+  cursor: move;
+  position: relative;
+}
+
+.delet-button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: transparent;
+}
+.delet-button:hover {
+  color: blanchedalmond;
+}
